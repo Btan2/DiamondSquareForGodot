@@ -126,10 +126,10 @@ func draw_map(height_map : Array, map_size : int, do_draw : bool):
 			nv = (height_map[px][py] - HEIGHT_MIN) / v_range
 			image.set_pixel(px, py, Color8(255, 255, 255) * nv)
 
-	if do_draw:
-		tex.update(image)
-		material.set_shader_parameter("c0", tex)
-
-    # save image to res
-	#var s = str(r.get_seed()).left(7)
-	#image.save_png("res://" + "img" + s + ".png")
+	# add image to material shader
+	# tex.update(image)
+	# material.set_shader_parameter("texture1", tex)
+	
+	# save image to res
+	# var s = str(r.get_seed()).left(7)
+	# image.save_png("res://" + "img" + s + ".png")
