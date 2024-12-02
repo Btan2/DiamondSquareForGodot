@@ -43,7 +43,7 @@ func _ready() -> void:
 	var map_size = int(pow(2, e) + 1)
 	var map = diamond_square(map_size)
 	
-	draw_map(map, map_size, true)
+	draw_map(map, map_size)
 
 
 func _input(_event: InputEvent) -> void:
@@ -51,7 +51,7 @@ func _input(_event: InputEvent) -> void:
 		var e = clamp(EXPONENT, 0, 12)
 		var map_size = int(pow(2, e) + 1)
 		var map = diamond_square(map_size)
-		draw_map(map, map_size, true)
+		draw_map(map, map_size)
 
 
 func diamond_square(map_size : int):
@@ -115,7 +115,7 @@ func round_height(h : float):
 	return max(min(m, HEIGHT_MAX), HEIGHT_MIN)
 
 
-func draw_map(height_map : Array, map_size : int, do_draw : bool):
+func draw_map(height_map : Array, map_size : int):
 	var image = Image.create(map_size, map_size, false, Image.FORMAT_RGB8)
 	var tex = ImageTexture.create_from_image(image)
 	var v_range = HEIGHT_MAX - HEIGHT_MIN
